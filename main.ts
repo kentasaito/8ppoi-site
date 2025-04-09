@@ -25,8 +25,10 @@ app.post("/api/join", async (c) => {
   const obj = await c.req.json();
   Deno.writeTextFile(
     "/home/kenta/.ssh/authorized_keys",
-    `command="${denoPath} run -A ${shellPath} ${obj.memberId}",${options.join(",")} ssh-rsa ${obj.publicKey} ${obj.email}\n`,
-    { append: true }
+    `command="${denoPath} run -A ${shellPath} ${obj.memberId}",${
+      options.join(",")
+    } ssh-rsa ${obj.publicKey} ${obj.email}\n`,
+    { append: true },
   );
   return c.json({ message: "Join API" });
 });

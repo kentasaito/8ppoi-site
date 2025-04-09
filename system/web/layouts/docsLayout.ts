@@ -21,9 +21,11 @@ export const docsLayout = (c: Context) =>
     </nav>
   </header>
   <main>
-${Indentdown.getHtml(Deno.readTextFileSync(
-    `./system/web/pages${c.req.path.replace(/\/$/, "/index")}.id`
-  ))}
+${
+    Indentdown.getHtml(Deno.readTextFileSync(
+      `./system/web/pages${c.req.path.replace(/\/$/, "/index")}.id`,
+    ))
+  }
   </main>
   <footer>
     <p>&copy; 2025 8ppoi</p>

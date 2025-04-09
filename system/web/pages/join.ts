@@ -1,6 +1,6 @@
 import { Context } from "@hono/hono";
 
-export const content = async (_c: Context) => {
+export const content = (_c: Context) => {
   return `
     <h1>メンバー登録</h1>
     <div>
