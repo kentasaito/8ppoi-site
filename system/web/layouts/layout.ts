@@ -1,4 +1,4 @@
-import { Context } from "hono";
+import { Context } from "@hono/hono";
 
 export const layout = async (c: Context) =>
   `<!DOCTYPE html>

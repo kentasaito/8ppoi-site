@@ -1,5 +1,5 @@
 import { getDetailedCartridge } from "../models/getDetailedCartridge.ts";
-import { Context } from "hono";
+import { Context } from "@hono/hono";
 
 export const content = async (c: Context) => {
   const detailedCartridge = await getDetailedCartridge(

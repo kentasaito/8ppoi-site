@@ -13,4 +13,6 @@ app.get("/profile/:memberId", (c) => c.html(layout(c)));
 app.get("/favicon.ico", (c) => c.html(""));
 app.get("/*", serveStatic({ root: "./" }));
 
-Deno.serve(app.fetch);
+Deno.serve({
+  port: 6502,
+}, app.fetch);
