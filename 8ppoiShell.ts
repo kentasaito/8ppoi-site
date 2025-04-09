@@ -1,7 +1,9 @@
-import { initMember } from "./tasks/initMember.ts";
-import { deleteMember } from "./tasks/deleteMember.ts";
-import { initCartridge } from "./tasks/initCartridge.ts";
-import { deleteCartridge } from "./tasks/deleteCartridge.ts";
+import { initMember } from "./system/tasks/initMember.ts";
+import { deleteMember } from "./system/tasks/deleteMember.ts";
+import { initCartridge } from "./system/tasks/initCartridge.ts";
+import { deleteCartridge } from "./system/tasks/deleteCartridge.ts";
+
+Deno.chdir(import.meta.dirname);
 
 const memberId = Deno.args[0];
 const sshOriginalCommand = Deno.env.get("SSH_ORIGINAL_COMMAND");
@@ -14,9 +16,9 @@ const args = sshOriginalCommand.split(" ");
 if (args[0].startsWith("git-")) {
   if (
     sshOriginalCommand.split(" ")[1] !==
-      `'8ppoi/8ppoiShell/remote/members/${memberId}'` &&
+      `'members/${memberId}'` &&
     !sshOriginalCommand.split(" ")[1].startsWith(
-      `'8ppoi/8ppoiShell/remote/cartridges/${memberId}/`,
+      `'cartridges/${memberId}/`,
     )
   ) {
     console.error("Unauthorized repo path");

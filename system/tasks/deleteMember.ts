@@ -5,7 +5,7 @@ export const deleteMember = async (
 ) => {
   try {
     const cartridgesPath =
-      `/home/kenta/8ppoi/8ppoiShell/remote/cartridges/${memberId}`;
+      `${Deno.cwd()}/cartridges/${memberId}`;
     Deno.removeSync(cartridgesPath, { recursive: true });
   } catch (error) {
     console.error("Failed to delete cartridges directory:", error);
@@ -19,7 +19,7 @@ export const deleteMember = async (
 
   try {
     const membersPath =
-      `/home/kenta/8ppoi/8ppoiShell/remote/members/${memberId}`;
+      `${Deno.cwd()}/members/${memberId}`;
     Deno.removeSync(membersPath, { recursive: true });
   } catch (error) {
     console.error("Failed to delete members directory:", error);

@@ -2,7 +2,7 @@ import { connection } from "../connection.ts";
 
 export const initMember = async (memberId: string) => {
   try {
-    const path = `/home/kenta/8ppoi/8ppoiShell/remote/members/${memberId}`;
+    const path = `${Deno.cwd()}/members/${memberId}`;
     Deno.mkdirSync(path, { recursive: true });
   } catch (error) {
     console.error("Failed to create directory:", error);
@@ -10,7 +10,7 @@ export const initMember = async (memberId: string) => {
   }
 
   Deno.chdir(
-    `/home/kenta/8ppoi/8ppoiShell/remote/members/${memberId}`,
+    `${Deno.cwd()}/members/${memberId}`,
   );
 
   if (
