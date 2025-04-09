@@ -1,5 +1,5 @@
 import { getDetailedMember } from "../models/getDetailedMember.ts";
-import { Context } from "@hono:hono";
+import { Context } from "@hono/hono";
 
 export const content = async (c: Context) => {
   const detailedMember = await getDetailedMember(
