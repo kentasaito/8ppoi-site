@@ -34,7 +34,7 @@ export const initCartridge = async (memberId: string, cartridgeId: string) => {
   }
 
   await connection.query(
-    "insert into `cartridge` set `memberId` = ?, `cartridgeId` = ?",
+    "insert into `cartridges` set `memberId` = ?, `cartridgeId` = ?",
     [memberId, cartridgeId],
   );
 

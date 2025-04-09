@@ -15,7 +15,7 @@ export const deleteMember = async (
   }
 
   await connection.query(
-    "delete from `cartridge` where `memberId` = ?",
+    "delete from `cartridges` where `memberId` = ?",
     [memberId],
   );
 
@@ -31,7 +31,7 @@ export const deleteMember = async (
   }
 
   await connection.query(
-    "delete from `member` where `memberId` = ?",
+    "delete from `members` where `memberId` = ?",
     [memberId],
   );
 

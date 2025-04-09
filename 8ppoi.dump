@@ -17,53 +17,49 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `cartridge`
+-- Table structure for table `cartridges`
 --
 
-DROP TABLE IF EXISTS `cartridge`;
+DROP TABLE IF EXISTS `cartridges`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
-CREATE TABLE `cartridge` (
+CREATE TABLE `cartridges` (
   `memberId` varchar(255) NOT NULL,
   `cartridgeId` varchar(255) NOT NULL,
   PRIMARY KEY (`memberId`,`cartridgeId`),
-  CONSTRAINT `cartridge_ibfk_1` FOREIGN KEY (`memberId`) REFERENCES `member` (`memberId`)
+  CONSTRAINT `cartridges_ibfk_1` FOREIGN KEY (`memberId`) REFERENCES `members` (`memberId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `cartridge`
+-- Dumping data for table `cartridges`
 --
 
-LOCK TABLES `cartridge` WRITE;
-/*!40000 ALTER TABLE `cartridge` DISABLE KEYS */;
-INSERT INTO `cartridge` VALUES
-('kentasaito','invaderx');
-/*!40000 ALTER TABLE `cartridge` ENABLE KEYS */;
+LOCK TABLES `cartridges` WRITE;
+/*!40000 ALTER TABLE `cartridges` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cartridges` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `member`
+-- Table structure for table `members`
 --
 
-DROP TABLE IF EXISTS `member`;
+DROP TABLE IF EXISTS `members`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8mb4 */;
-CREATE TABLE `member` (
+CREATE TABLE `members` (
   `memberId` varchar(255) NOT NULL,
   PRIMARY KEY (`memberId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `member`
+-- Dumping data for table `members`
 --
 
-LOCK TABLES `member` WRITE;
-/*!40000 ALTER TABLE `member` DISABLE KEYS */;
-INSERT INTO `member` VALUES
-('kentasaito');
-/*!40000 ALTER TABLE `member` ENABLE KEYS */;
+LOCK TABLES `members` WRITE;
+/*!40000 ALTER TABLE `members` DISABLE KEYS */;
+/*!40000 ALTER TABLE `members` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -75,4 +71,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-09 10:21:38
+-- Dump completed on 2025-04-09 10:56:22

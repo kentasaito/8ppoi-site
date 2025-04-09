@@ -16,7 +16,7 @@ export const deleteCartridge = async (
   }
 
   await connection.query(
-    "delete from `cartridge` where `memberId` = ? and `cartridgeId` = ?",
+    "delete from `cartridges` where `memberId` = ? and `cartridgeId` = ?",
     [memberId, cartridgeId],
   );
 

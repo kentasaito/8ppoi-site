@@ -33,7 +33,7 @@ export const initMember = async (memberId: string) => {
     Deno.exit(1);
   }
 
-  await connection.query("insert into member set memberId = ?", [memberId])
+  await connection.query("insert into members set memberId = ?", [memberId])
     .catch((_e) => Deno.exit(1));
 
   connection.end();
