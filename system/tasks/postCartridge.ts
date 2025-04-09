@@ -1,6 +1,6 @@
 import { connection } from "../connection.ts";
 
-export const initCartridge = async (memberId: string, cartridgeId: string) => {
+export const postCartridge = async (memberId: string, cartridgeId: string) => {
   try {
     const path =
       `${Deno.cwd()}/cartridges/${memberId}/${cartridgeId}`;

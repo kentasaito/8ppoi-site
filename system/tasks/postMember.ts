@@ -1,6 +1,6 @@
 import { connection } from "../connection.ts";
 
-export const initMember = async (memberId: string) => {
+export const postMember = async (memberId: string) => {
   try {
     const path = `${Deno.cwd()}/members/${memberId}`;
     Deno.mkdirSync(path, { recursive: true });

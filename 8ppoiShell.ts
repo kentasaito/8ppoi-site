@@ -1,6 +1,6 @@
-import { initMember } from "./system/tasks/initMember.ts";
+import { postMember } from "./system/tasks/postMember.ts";
 import { deleteMember } from "./system/tasks/deleteMember.ts";
-import { initCartridge } from "./system/tasks/initCartridge.ts";
+import { postCartridge } from "./system/tasks/postCartridge.ts";
 import { deleteCartridge } from "./system/tasks/deleteCartridge.ts";
 
 Deno.chdir(import.meta.dirname);
@@ -35,16 +35,16 @@ if (args[0].startsWith("git-")) {
   Deno.exit(code);
 } else if (args[0] === "8ppoiShell") {
   switch (args[1]) {
-    case "initMember": {
-      await initMember(memberId);
+    case "postMember": {
+      await postMember(memberId);
       break;
     }
     case "deleteMember": {
       await deleteMember(memberId);
       break;
     }
-    case "initCartridge": {
-      await initCartridge(memberId, args[2]);
+    case "postCartridge": {
+      await postCartridge(memberId, args[2]);
       break;
     }
     case "deleteCartridge": {
