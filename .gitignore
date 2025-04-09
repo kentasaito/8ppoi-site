@@ -1,2 +1,5 @@
-/cartridges/
-/member/
+/cartridges/*
+!/cartridges/.gitkeep
+
+/members/*
+!/members/.gitkeep
