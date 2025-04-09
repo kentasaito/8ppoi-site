@@ -1,5 +1,5 @@
-import { Hono } from "hono";
-import { serveStatic } from "hono/deno";
+import { Hono } from "@hono/hono";
+import { serveStatic } from "@hono/hono/deno";
 
 const app = new Hono();
 
