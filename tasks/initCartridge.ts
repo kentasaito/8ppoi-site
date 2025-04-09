@@ -1,19 +1,18 @@
 import { connection } from "../connection.ts";
 
 export const initCartridge = async (memberId: string, cartridgeId: string) => {
-  if (
-    !(await new Deno.Command("mkdir", {
-      args: [
-        "-p",
-        `/home/kenta/8ppoi/8ppoiShell/remote/cartridges/${memberId}/${cartridgeId}`,
-      ],
-    }).spawn().status).success
-  ) {
+  try {
+    const path = `/home/kenta/8ppoi/8ppoiShell/remote/cartridges/${memberId}/${cartridgeId}`;
+    Deno.mkdirSync(path, { recursive: true });
+  } catch (error) {
+    console.error("Failed to create directory:", error);
     Deno.exit(1);
   }
+
   Deno.chdir(
     `/home/kenta/8ppoi/8ppoiShell/remote/cartridges/${memberId}/${cartridgeId}`,
   );
+
   if (
     !(await new Deno.Command("git", { args: ["init", "."] }).spawn().status)
       .success

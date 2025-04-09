@@ -4,14 +4,11 @@ export const deleteCartridge = async (
   memberId: string,
   cartridgeId: string,
 ) => {
-  if (
-    !(await new Deno.Command("rm", {
-      args: [
-        "-rf",
-        `/home/kenta/8ppoi/8ppoiShell/remote/cartridges/${memberId}/${cartridgeId}`,
-      ],
-    }).spawn().status).success
-  ) {
+  try {
+    const path = `/home/kenta/8ppoi/8ppoiShell/remote/cartridges/${memberId}/${cartridgeId}`;
+    Deno.removeSync(path, { recursive: true });
+  } catch (error) {
+    console.error("Failed to delete cartridge:", error);
     Deno.exit(1);
   }
 

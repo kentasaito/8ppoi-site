@@ -3,14 +3,11 @@ import { connection } from "../connection.ts";
 export const deleteMember = async (
   memberId: string,
 ) => {
-  if (
-    !(await new Deno.Command("rm", {
-      args: [
-        "-rf",
-        `/home/kenta/8ppoi/8ppoiShell/remote/cartridges/${memberId}`,
-      ],
-    }).spawn().status).success
-  ) {
+  try {
+    const cartridgesPath = `/home/kenta/8ppoi/8ppoiShell/remote/cartridges/${memberId}`;
+    Deno.removeSync(cartridgesPath, { recursive: true });
+  } catch (error) {
+    console.error("Failed to delete cartridges directory:", error);
     Deno.exit(1);
   }
 
@@ -19,14 +16,11 @@ export const deleteMember = async (
     [memberId],
   );
 
-  if (
-    !(await new Deno.Command("rm", {
-      args: [
-        "-rf",
-        `/home/kenta/8ppoi/8ppoiShell/remote/members/${memberId}`,
-      ],
-    }).spawn().status).success
-  ) {
+  try {
+    const membersPath = `/home/kenta/8ppoi/8ppoiShell/remote/members/${memberId}`;
+    Deno.removeSync(membersPath, { recursive: true });
+  } catch (error) {
+    console.error("Failed to delete members directory:", error);
     Deno.exit(1);
   }
 
