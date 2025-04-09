@@ -5,8 +5,7 @@ export const deleteCartridge = async (
   cartridgeId: string,
 ) => {
   try {
-    const path =
-      `${Deno.cwd()}/cartridges/${memberId}/${cartridgeId}`;
+    const path = `${Deno.cwd()}/cartridges/${memberId}/${cartridgeId}`;
     Deno.removeSync(path, { recursive: true });
   } catch (error) {
     console.error("Failed to delete cartridge:", error);

@@ -30,7 +30,9 @@ async function getCartridges(): Promise<Cartridge[]> {
   for await (const entry of Deno.readDir("./cartridges")) {
     if (entry.isDirectory) {
       const memberId = entry.name;
-      const module = await import(`${Deno.cwd()}/members/${memberId}/Member.js`);
+      const module = await import(
+        `${Deno.cwd()}/members/${memberId}/Member.js`
+      );
       const memberName = module.Member.displayName;
       cartridges.push(...await getMemberCartridges(memberId, memberName));
     }

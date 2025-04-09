@@ -2,8 +2,7 @@ import { connection } from "../connection.ts";
 
 export const postCartridge = async (memberId: string, cartridgeId: string) => {
   try {
-    const path =
-      `${Deno.cwd()}/cartridges/${memberId}/${cartridgeId}`;
+    const path = `${Deno.cwd()}/cartridges/${memberId}/${cartridgeId}`;
     Deno.mkdirSync(path, { recursive: true });
   } catch (error) {
     console.error("Failed to create directory:", error);
