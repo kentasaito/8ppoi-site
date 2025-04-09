@@ -1,6 +1,7 @@
+import { Indentdown } from "@kentasaito/indntdown";
 import { Context } from "@hono/hono";
 
-export const layout = async (c: Context) =>
+export const docsLayout = (c: Context) =>
   `<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -20,10 +21,9 @@ export const layout = async (c: Context) =>
     </nav>
   </header>
   <main>
-${await import(
-    `../pages/${c.req.path.replace(/\/$/, "/index").split("/")[1]}.ts`
-  )
-    .then((module) => module.content(c))}
+${Indentdown.getHtml(Deno.readTextFileSync(
+    `./system/web/pages${c.req.path.replace(/\/$/, "/index")}.id`
+  ))}
   </main>
   <footer>
     <p>&copy; 2025 8ppoi</p>

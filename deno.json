@@ -1,6 +1,7 @@
 {
   "lock": false,
   "imports": {
+    "@kentasaito/indntdown": "jsr:@kenta/test2",
     "@hono/hono": "jsr:@hono/hono@^4.7.5"
   },
   "tasks": {

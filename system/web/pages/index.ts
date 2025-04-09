@@ -5,7 +5,7 @@ export const content = async (_c: Context) => {
   const cartridges = await getCartridges();
 
   return `
-    <h1>Cartridges</h1>
+    <h1>カートリッジ一覧</h1>
     <div>
       <ul>
         ${
