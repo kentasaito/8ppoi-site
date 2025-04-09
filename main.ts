@@ -3,7 +3,7 @@ import { serveStatic } from "hono/deno";
 
 const app = new Hono();
 
-import { layout } from "./system/layouts/layout.ts";
+import { layout } from "./system/web/layouts/layout.ts";
 
 app.get("/", (c) => c.html(layout(c)));
 app.get("/play/:memberId/:cartridgeId", (c) => c.html(layout(c)));

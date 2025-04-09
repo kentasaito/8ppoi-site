@@ -1,7 +1,7 @@
-import { postMember } from "./system/tasks/postMember.ts";
-import { deleteMember } from "./system/tasks/deleteMember.ts";
-import { postCartridge } from "./system/tasks/postCartridge.ts";
-import { deleteCartridge } from "./system/tasks/deleteCartridge.ts";
+import { postMember } from "./system/cli/tasks/postMember.ts";
+import { deleteMember } from "./system/cli/tasks/deleteMember.ts";
+import { postCartridge } from "./system/cli/tasks/postCartridge.ts";
+import { deleteCartridge } from "./system/cli/tasks/deleteCartridge.ts";
 
 Deno.chdir(import.meta.dirname);
 
