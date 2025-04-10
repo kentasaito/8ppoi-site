@@ -37,5 +37,5 @@ app.get("/favicon.ico", (c) => c.html(""));
 app.get("/*", serveStatic({ root: "./" }));
 
 Deno.serve({
-  port: 6502,
+  port: parseInt(Deno.env.get("SITE_PORT_8PPOI") || "8000"),
 }, app.fetch);
