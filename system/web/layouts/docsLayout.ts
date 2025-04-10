@@ -20,12 +20,17 @@ export const docsLayout = (c: Context) =>
       <a href="/docs/">ドキュメンテーション</a>
     </nav>
   </header>
-  <main>
+  <main style="display:flex; gap:1rem;">
+    <div>
+      ${Indentdown.getHtml(Deno.readTextFileSync("./system/web/pages/docs/toc.id"))}
+    </div>
+    <div>
 ${
     Indentdown.getHtml(Deno.readTextFileSync(
       `./system/web/pages${c.req.path.replace(/\/$/, "/index")}.id`,
     ))
   }
+    </div>
   </main>
   <footer>
     <p>&copy; 2025 8ppoi</p>

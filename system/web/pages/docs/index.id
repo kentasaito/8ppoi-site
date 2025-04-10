@@ -1,4 +1,18 @@
-asdf
-  asdf
+ユーザーズガイド
+  8ppoiはブラウザゲームの投稿サイトおよびそのSDKです。
+  ここではカートリッジ開発の流れだけを説明します。
+  具体的なカートリッジ作成方法はチュートリアルを参照してください。
+  8ppoiコンソールのAPIについてはAPIリファレンスを参照してください。
 
-  asdf
+  目次
+    <ul>
+      <li><a href="/docs/install">SDKをインストールする</a></li>
+      <li><a href="/docs/initCartridge">SDKでカートリッジを作成する</a></li>
+      <li><a href="/docs/initProfile">SDKでプロフィールを作成する</a></li>
+      <li><a href="/docs/join">サイトへのメンバー登録をする</a></li>
+      <li><a href="/docs/postProfile">サイトにプロフィールを公開する</a></li>
+      <li><a href="/docs/postCartridge">サイトにカートリッジを投稿する</a></li>
+      <li><a href="/docs/deleteCartridge">サイトからカートリッジを削除する</a></li>
+      <li><a href="/docs/deleteProfile">サイトからプロフィールを削除する</a></li>
+      <li><a href="/docs/leave">サイトへのメンバー登録を解除する</a></li>
+    </ul>
